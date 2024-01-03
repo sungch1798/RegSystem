@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REG</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+        } );
+
+        $(document).ready(function() {
+            $("#checkpw").on("click", function() {
+                // 獲取輸入框中的值
+                var password = $("#pass1").val();
+                var confirmPassword = $("#pass2").val();
+
+                // 檢查密碼是否相同
+                if (password === confirmPassword) {
+                    alert("密碼輸入正確，前往註冊....");
+                    $("#regsys").submit();
+                } else {
+                    alert("密碼不相同，請重新輸入");
+                    return "reg";
+                }
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+
+<h1>會員註冊系統02 use th:object</h1>
+<form id="regsys" method="post" th:object="${usermod}"  action="reg2">
+    會員帳號:<input type="text" th:field="*{username}" name="username" value=""><br><br>
+    會員密碼:<input type="text" id="pass1" th:field="*{password}" name="password1" value=""><br><br>
+    會員密碼:<input type="text" id="pass2" name="password2" value=""><br><br>
+    電子郵件:<input type="text" th:field="*{email}" name="email" value=""><br><br>
+    手機號碼:<input type="text" th:field="*{phone}" name="phone" value=""><br><br>
+    <p>會員生日:<input type="text" id="datepicker" name="bday"></p><br><br>
+
+
+    <input type="reset" value="清除資料">
+</form>
+<button id="checkpw">註冊會員</button>
+</body>
+</html>

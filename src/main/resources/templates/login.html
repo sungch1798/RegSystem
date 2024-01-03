@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="get" action="login">
+會員帳號:<input type="text" th:field="*{usermod.username}" name="username" value=""><br><br>
+會員密碼:<input type="password" th:field="*{usermod.password}" name="password" value=""><br><br>
+
+
+<input type="submit" value="登入"><br><br>
+<input type="reset" value="清除"><br><br>
+</form>
+</body>
+</html>
