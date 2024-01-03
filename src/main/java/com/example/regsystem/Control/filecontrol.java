@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Paths;
+import java.util.List;
 
 @Controller
 public class filecontrol {
@@ -28,7 +29,7 @@ public class filecontrol {
         model.addAttribute("filename",mp.getOriginalFilename());
 
         try {
-            mp.transferTo(Paths.get("c:/temp/123.jpg"));
+            mp.transferTo(Paths.get("c:/temp/"+mp.getOriginalFilename()));
             InputStream is =mp.getInputStream();
             System.out.println("檔案轉存成功!!");
         }
@@ -37,4 +38,22 @@ public class filecontrol {
         }
         return "resupload";
     }
+
+    @PostMapping("/upload2")
+    public String uploadres2(Model model,HttpServletRequest request) {
+        List<MultipartFile> mps =((MultipartHttpServletRequest)request).getFiles("imgfiles");
+        model.addAttribute("count",mps.size());
+        for (MultipartFile mp:mps)
+
+        try {
+            mp.transferTo(Paths.get("c:/temp/"+mp.getOriginalFilename()));
+            InputStream is =mp.getInputStream();
+            System.out.println("檔案轉存成功!!");
+        }
+        catch (IOException e){
+            System.err.println("寫入存檔失敗");
+        }
+        return "resupload2";
+    }
+
 }
