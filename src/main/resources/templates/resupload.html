@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="font-size: 1.2rem">
+<h1>照片上傳結果</h1>
+
+<h2 th:text="${result}"> 成功</h2><br><br>
+圖片大小為 :  <span th:text="${size}"> 成功</span>  位元組<br><br>
+圖片大小為 :  <span th:text="${size/1024}"> 成功</span>  K b<br><br>
+圖片類型為 :  <span th:text="${type}"> 成功</span><br><br>
+圖片名稱為 :  <span th:text="${filename}"> 成功</span><br><br>
+
+</body>
+</html>
