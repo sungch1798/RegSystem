@@ -1,9 +1,8 @@
 package com.example.regsystem.Model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.sql.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,8 +11,12 @@ import lombok.Setter;
 public class members {
    private String username;
    private String password;
+   private String mname;
    private String email;
    private String phone;
+   private String mcity;
+   private String pno;
+   private String adds;
 
 
 }

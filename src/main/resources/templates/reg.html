@@ -37,16 +37,22 @@
 </head>
 <body>
 
-<h1>會員註冊系統02 use th:object</h1>
+<h1>會員註冊系統</h1>
 <form id="regsys" method="post" th:object="${usermod}"  action="reg2">
+    <h2>1.會員帳號密碼設定</h2>
     會員帳號:<input type="text" th:field="*{username}" name="username" value=""><br><br>
-    會員密碼:<input type="text" id="pass1" th:field="*{password}" name="password1" value=""><br><br>
-    會員密碼:<input type="text" id="pass2" name="password2" value=""><br><br>
+    會員密碼:<input type="password" id="pass1" th:field="*{password}" name="password1" value=""><br><br>
+    會員密碼:<input type="password" id="pass2" name="password2" value=""><br><br>
+    <hr>
+    <h2>2.會員個人資料設定</h2>
+    會員姓名:<input type="text"  name="mname" value=""><br><br>
     電子郵件:<input type="text" th:field="*{email}" name="email" value=""><br><br>
     手機號碼:<input type="text" th:field="*{phone}" name="phone" value=""><br><br>
-    <p>會員生日:<input type="text" id="datepicker" name="bday"></p><br><br>
-
-
+    <hr>
+    <h2>3.會員地址設定</h2>
+    居住縣市:<input type="text"  name="mcity" value=""><br><br>
+    郵遞區號:<input type="text" name="pno" value=""><br><br>
+    詳細地址:<input type="text"  name="adds" value=""><br><br>
     <input type="reset" value="清除資料">
 </form>
 <button id="checkpw">註冊會員</button>

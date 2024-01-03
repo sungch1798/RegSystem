@@ -10,9 +10,11 @@ public class UserDao {
     @Autowired
     private JdbcTemplate jdbct;
     public int saveuser(members usermod){
-    String sql="INSERT INTO member (username,password,email,phone) values (?,?,?,?)";
+    String sql="INSERT INTO member (username,password,mname,email,phone,mcity,pno,adds) values (?,?,?,?,?,?,?,?)";
 
-    return  jdbct.update(sql,usermod.getUsername(),usermod.getPassword(),usermod.getEmail(),usermod.getPhone());
+    return  jdbct.update(sql,usermod.getUsername(),usermod.getPassword(),usermod.getMname()
+            ,usermod.getEmail(),usermod.getPhone(),usermod.getMcity(),
+            usermod.getPno(),usermod.getAdds());
 
     }
     public Long userExis(String username){
