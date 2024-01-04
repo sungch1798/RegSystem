@@ -12,9 +12,10 @@ public class members {
    private String username;
    private String password;
    private String mname;
+   private String sex;
    private String email;
    private String phone;
-   private String mcity;
+
    private String pno;
    private String adds;
 

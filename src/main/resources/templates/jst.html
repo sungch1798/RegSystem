@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSTEST</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script>
+        function displayTime() {
+            document.getElementById('s01').innerHTML = Date();
+        }
+        function setupTimer() {
+            setInterval(displayTime, 1000)
+        }
+
+        // 每秒自动更新时间
+        //setInterval(displayTime, 1000);
+
+        function hideElement() {
+            $("h3").show();
+        }
+        function showElement() {
+            $("h3").hide();
+        }
+
+        // onload 事件
+        $(document).ready(
+            function () {
+                $("h3").hide()
+            }
+        );
+
+    </script>
+</head>
+<body onload="setupTimer()">
+<span id="s01" style="font-size: 1.2rem ; background: #bacdfc" >系統時間</span>
+<h3> hello 你應該可以看到我</h3>
+
+
+<div style="width: 500px;height: 300px;background: darkseagreen;display: inline-block"
+     onmouseleave="document.getElementById('d01').innerHTML='滑鼠離開了'"
+     onmouseenter="hideElement()"
+
+
+     >
+    <button onclick="alert('觸發點擊事件')">點我觸發JS</button>
+</div>
+<div id="d01" style="width: 500px;height: 300px;background: bisque;display: inline-block"
+onmouseenter="showElement()"
+></div>
+</body>
+</html>

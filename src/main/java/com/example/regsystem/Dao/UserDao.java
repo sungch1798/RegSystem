@@ -12,8 +12,8 @@ public class UserDao {
     public int saveuser(members usermod){
     String sql="INSERT INTO member (username,password,mname,email,phone,mcity,pno,adds) values (?,?,?,?,?,?,?,?)";
 
-    return  jdbct.update(sql,usermod.getUsername(),usermod.getPassword(),usermod.getMname()
-            ,usermod.getEmail(),usermod.getPhone(),usermod.getMcity(),
+    return  jdbct.update(sql,usermod.getUsername(),usermod.getSex(),usermod.getPassword(),usermod.getMname()
+            ,usermod.getEmail(),usermod.getPhone(),usermod,
             usermod.getPno(),usermod.getAdds());
 
     }

@@ -27,7 +27,7 @@
                     $("#regsys").submit();
                 } else {
                     alert("密碼不相同，請重新輸入");
-                    return "reg";
+                    $("#regsys").reset();
                 }
             });
         });
@@ -46,12 +46,11 @@
     <hr>
     <h2>2.會員個人資料設定</h2>
     會員姓名:<input type="text"  name="mname" value=""><br><br>
-    電子郵件:<input type="text" th:field="*{email}" name="email" value=""><br><br>
+    會員性別:<input type="text"  name="sex" value=""><br><br>
     手機號碼:<input type="text" th:field="*{phone}" name="phone" value=""><br><br>
     <hr>
     <h2>3.會員地址設定</h2>
     居住縣市:<input type="text"  name="mcity" value=""><br><br>
-    郵遞區號:<input type="text" name="pno" value=""><br><br>
     詳細地址:<input type="text"  name="adds" value=""><br><br>
     <input type="reset" value="清除資料">
 </form>

@@ -62,9 +62,10 @@ public class memberC {
         model.addAttribute("user",usermod.getUsername());
         model.addAttribute("password",usermod.getPassword());
         model.addAttribute("mname",usermod.getMname());
+        model.addAttribute("sex",usermod.getSex());
         model.addAttribute("email",usermod.getEmail());
         model.addAttribute("phone",usermod.getPhone());
-        model.addAttribute("mcity",usermod.getMcity());
+
         model.addAttribute("pno",usermod.getPno());
         model.addAttribute("adds",usermod.getAdds());
         model.addAttribute("mesg", msg);
